@@ -50,4 +50,12 @@ public class EmployeeController {
         EmployeeDto updatedEmployee = employeeService.updateEmployee(id, employeeDto);
         return ResponseEntity.ok(updatedEmployee);
     }
-}
+
+
+    // GET employee by email - search functionality
+    @GetMapping("/search")
+    public ResponseEntity<String> searchEmployeeByEmail(@RequestParam String email) {
+        return ResponseEntity.ok("Searching for employee with email: " + email);
+    }
+
+  }
